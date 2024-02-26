@@ -1,169 +1,228 @@
+/* Global Layout*/
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 body {
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.6;
-  background-color: #00ffdd;
-  color: #0c947e;
-  margin: 0;
-  padding: 20px;
-}
-
-header {
+  max-width: 1024px;
   text-align: center;
-  margin-bottom: 40px;
+  line-height: 1.5;
+  background-color: rgb(137, 4, 149);
+  font-family: "Anta", sans-serif;
+  margin: auto;
 }
-
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 header h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin: 2rem;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+header nav {
+  width: 90%;
+  margin-bottom: 3rem;
 }
 
-nav ul li {
-  display: inline-block;
-  margin-right: 20px;
-}
-
-nav ul li:last-child {
-  margin-right: 0;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  padding: 10px 15px;
-  border-radius: 5px;
-  background-color: #f8f9fa;
-  transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover {
-  background-color: #ddd;
-}
-
-main {
+header nav ul {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+}
+
+li {
+  list-style: none;
+  margin: 1.2rem;
+}
+
+header nav ul li a {
+  background-color: white;
+  display: block;
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  margin-bottom: 0.3rem;
 }
 
 #introduction {
-  flex-basis: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 2rem;
 }
 
 #introduction img {
-  max-width: 100%;
+  max-width: 70%;
+  border-radius: 10px;
 }
 
-#introduction p {
-  flex-basis: calc(50% - 20px);
-  margin-left: 20px;
+p {
+  line-height: 1.5;
+  padding: 1rem 3rem 2rem;
 }
 
 #portfolio {
-  flex-basis: 100%;
+  background-color: white;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+#portfolio h2 {
+  padding: 3rem 2rem;
 }
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
+  padding: 0 1rem;
 }
 
 .card {
-  flex-basis: calc(50% - 20px);
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  padding-bottom: 2rem;
 }
 
 .card img {
+  margin-bottom: 2rem;
+}
+
+img {
   max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
 }
 
-.card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.information {
+  padding: 5px;
+  font-size: 15px;
 }
 
-.card p {
-  font-size: 1rem;
-  line-height: 1.4;
+#contact {
+  margin: 3rem;
 }
 
-footer {
-  text-align: center;
-  margin-top: 40px;
+footer nav {
+  font-size: 15px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-footer p {
-  font-size: 1rem;
-  margin-bottom: 20px;
+footer hr {
+  width: 90%;
+  margin: 0 auto;
 }
 
-footer ul {
-  list-style-type: none;
+footer nav ul {
+  display: none;
 }
 
-footer ul li {
-  display: inline-block;
-  margin-right: 10px;
+address {
+  font-style: normal;
+  margin-bottom: 5rem;
 }
 
-footer ul li:last-child {
-  margin-right: 0;
+address div {
+  margin-bottom: 1rem;
 }
 
-footer ul li a {
+address a {
+  text-transform: none;
+}
+a {
   text-decoration: none;
-  color: #333;
+  color: black;
+  font-weight: 700;
+  transition: all 0.5s;
 }
 
-/* Media Queries */
-@media screen and (min-width: 768px) {
-  main {
+
+
+/* Media Queries*/
+@media screen and (min-width:768px) {
+  body {
+    font-size: 1.2rem;
+  }
+
+  header nav ul {
+    width: 100%;
+    display: flex;
     flex-direction: row;
+    justify-content: center;
+  }
+
+  header nav ul li a {
+    background-color: antiquewhite;
+  }
+
+  #introduction img {
+    width: 40%;
+    order: 1;
+    margin-right: 2rem;
+  }
+
+  #introduction {
+    display: flex;
   }
 
   #introduction p {
-    flex-basis: calc(50% - 20px);
-    margin-left: 20px;
+    text-align: left;
+    padding: 0 2rem;
+  }
+  .card {
+    flex-basis: 49%;
   }
 
   .container {
-    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
   }
 
-  .card {
-    flex-basis: calc(50% - 20px);
-    margin-right: 20px;
-  }
 
-  .card:last-child {
-    margin-right: 0;
+  .back {
+    display: none;
+  }
+  
+  footer nav ul {
+    display: flex;
+    gap: 2rem;
   }
 }
 
-@media screen and (min-width: 1024px) {
-  body {
-    font-size: 18px;
+@media screen and (min-width: 1024px){
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    padding-right: 3rem;
   }
 
-  .card img {
-    max-width: 80%;
+  header nav {
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  header nav ul li a {
+    padding: 1rem;
+  }
+
+  #introduction p {
+    padding: 0 4rem;
+    margin-right: 2rem;
+  }
+
+  #introduction img {
+    margin-right: 4rem;
+  }
+
+  #portfolio {
+    margin: 0 2rem;
+  }
+  
+  
+  .card {
+    flex: 32%;
+    font-size: 1rem;
   }
 }
